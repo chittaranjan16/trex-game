@@ -1,0 +1,27 @@
+{
+  "tasks": {
+    "dev": "deno task start & deno run -A --watch=src/ build.ts",
+    "start": "deno run --allow-net --allow-read --allow-env main.ts",
+    "build": "deno run -A build.ts"
+  },
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable",
+      "deno.ns",
+      "deno.unstable"
+    ],
+    "strict": true
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"],
+      "exclude": ["no-window"]
+    }
+  },
+  "imports": {
+    "@luca/esbuild-deno-loader": "jsr:@luca/esbuild-deno-loader@^0.11.1",
+    "esbuild": "npm:esbuild@^0.25.3"
+  }
+}
